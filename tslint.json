@@ -1,5 +1,7 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended"
+  ],
   "rules": {
     "array-type": false,
     "arrow-parens": false,
@@ -23,7 +25,8 @@
     ],
     "import-blacklist": [
       true,
-      "rxjs/Rx"
+      "rxjs/Rx",
+      ["@app/services/.*/.*"]
     ],
     "interface-name": false,
     "max-classes-per-file": false,
@@ -66,7 +69,21 @@
       "as-needed"
     ],
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+    "ordered-imports": true,
+    "no-submodule-imports": [
+      true,
+      "@app",
+      "rxjs/operators",
+      "@angular/cdk-experimental",
+      "@angular/cdk/collections",
+      "@angular/cdk/portal",
+      "@angular/cdk/scrolling",
+      "@angular/common/http",
+      "@angular/core",
+      "@angular/material",
+      "@angular/platform-browser",
+      "@angular/router/testing"
+    ],
     "quotemark": [
       true,
       "single"
@@ -83,9 +100,17 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "defocus": true
   },
   "rulesDirectory": [
     "codelyzer"
-  ]
+  ],
+  "linterOptions": {
+    "exclude": [
+      "src/app/shared/sdk/**",
+      "src/polyfills.ts",
+      "src/test.ts"
+    ]
+  }
 }

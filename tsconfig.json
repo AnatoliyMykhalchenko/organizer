@@ -2,11 +2,16 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@app/*": ["src/app/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports":true,
+    
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
@@ -15,11 +20,12 @@
       "node_modules/@types"
     ],
     "lib": [
-      "es2018",
+      "es2019",
       "dom"
     ]
   },
   "angularCompilerOptions": {
+    "allowSyntheticDefaultImports":true,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }
